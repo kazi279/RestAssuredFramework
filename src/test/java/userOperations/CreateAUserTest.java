@@ -1,8 +1,6 @@
 package userOperations;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static org.hamcrest.Matchers.*;
@@ -10,8 +8,6 @@ import static org.testng.Assert.assertEquals;
 
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
-
-import com.google.gson.Gson;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -31,13 +27,10 @@ public class CreateAUserTest {
     public static final String PHONE = "0168566523";
     public static final int USER_STATUS = 1;
 
-    public static final String UPDATED_EMAIL = "mohammadkarim@gmail.com";
-    public static final String UPDATED_PASSWORD = "ffhs123@3#";
-
     @Test
     public void createAnUser() {
 
-        Map<String, Object> payload = new HashMap<String, Object>();
+        Map<String, Object> payload = new HashMap<>();
         payload.put("id", ID);
         payload.put("username", USER_NAME);
         payload.put("firstName", FIRST_NAME);
